@@ -4,4 +4,11 @@ feature 'Signup' do
     # expect(page).to have_content('Welcome, AppleMan')
     expect(User.first.email).to eq('steve@coder.com')
   end
+
+  scenario 'I cannot sign up with mismatching passwords' do
+    expect{ signup(password_confirmation: 'orange123') }.not_to change(User, :count)
+    expect(current_path).to eq('/users')
+    expect(page).to have_content('Password does not match the confirmation')
+  end
+
 end
