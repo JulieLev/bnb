@@ -1,6 +1,10 @@
+ENV['RACK_ENV'] ||= 'development'
+
 require 'sinatra/base'
 
-class BNB < Sinatra::Base
+require_relative 'data_mapper_setup'
+
+class Bnb < Sinatra::Base
   get '/' do
     erb :index
   end
