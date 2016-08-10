@@ -16,13 +16,14 @@ class Bnb < Sinatra::Base
 
   post '/spaces/add' do
     @user = User.create(name: 'Albie')
-    @user.spaces.create(space_name: params[:space_name], description: params[:description], price: params[:price])
+    @user.spaces.create(space_name: params[:space_name],
+                       description: params[:description],
+                             price: params[:price])
     redirect to('/spaces/index')
   end
 
   get '/spaces/index' do
     @spaces = Space.all
-    #@spaces = @user.spaces.all
     erb :'spaces/index'
   end
 

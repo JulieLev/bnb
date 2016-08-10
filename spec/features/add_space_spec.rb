@@ -15,7 +15,6 @@ feature 'Adding Spaces' do
       expect(page).to have_content('Beautiful sea view')
       expect(page).to have_content('10')
       expect(page).to have_content('Albie')
-
     end
   end
 end
