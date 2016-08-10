@@ -20,10 +20,5 @@
     click_button 'sign up'
   end
 
-  # def posting(post: 'Hello, world!')
-  #   visit '/posts/new'
-  #   fill_in 'post', with: post
-  #   click_button 'post it'
-  # end
-#
+
 # end
