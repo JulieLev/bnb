@@ -4,5 +4,5 @@ class User
   property :id, Serial
   property :name, String
 
-  #has n, :spaces
+  has n, :spaces
 end
