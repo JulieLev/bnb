@@ -1,11 +1,11 @@
 # module WebHelpers
 
-  # def signin(username:, password:)
-  #   visit '/sessions/new'
-  #   fill_in :username, with: username
-  #   fill_in :password, with: password
-  #   click_button 'sign in'
-  # end
+  def signin(email:, password:)
+    visit '/sessions/new'
+    fill_in :email, with: email
+    fill_in :password, with: password
+    click_button 'sign in'
+  end
 
   def signup(name: "Steve", email: "steve@coder.com", password: "apple123", password_confirmation: "apple123"
     )
