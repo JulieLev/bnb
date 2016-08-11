@@ -11,7 +11,16 @@ As a User
 So I can be identified when I use the site
 I want to be able to register quickly
 ```
-
+```
+As a registered User
+So I can use the site with the privileges of the registered users
+I want to be able to sign in
+```
+```
+As a registered User
+So I can securely exit the site
+I want to be able to sign out
+```
 ```
 As a Space Owner
 So I can list my space for rent
