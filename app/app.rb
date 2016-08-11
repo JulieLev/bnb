@@ -79,10 +79,16 @@ class Bnb < Sinatra::Base
   end
 
   post '/spaces/add' do
-    @user = User.create(name: 'Albie')
-    @user.spaces.create(space_name: params[:space_name],
-                       description: params[:description],
-                             price: params[:price])
+    # current_user.spaces.create(space_name: params[:space_name],
+    #                           description: params[:description],
+    #                                 price: params[:price])
+    Space.create(space_name: params[:space_name],
+                description: params[:description],
+                price: params[:price],
+                date_from: params[:date_from],
+                date_to: params[:date_to],
+                user_id: session[:user_id])
+
     redirect to('/spaces/index')
   end
 
