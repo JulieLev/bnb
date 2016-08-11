@@ -1,0 +1,15 @@
+<h1>Spaces</h1>
+
+<ul id='list_spaces'>
+  <% @spaces.each do |space| %>
+      <li>
+        <%= space.space_name %>
+        <br>
+        <%= space.description %>
+        <br>
+        <%= space.price %>
+        <br>
+        <%= space.user.name %>
+     </li>
+  <% end %>
+</ul>

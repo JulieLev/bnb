@@ -4,13 +4,12 @@ require 'dm-validations'
 class User
   include DataMapper::Resource
 
-  # has n, :spaces
-
   property :id, Serial
   property :name, String, required: true
   property :password_digest, String, length: 60, required: true
   property :email, String, required: true, format: :email_address, unique: true
 
+  has n, :spaces
 
   attr_reader :password
   attr_accessor :password_confirmation
@@ -31,5 +30,4 @@ class User
       nil
     end
   end
-
 end
