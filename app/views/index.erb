@@ -1,12 +1,35 @@
 <h1>Welcome to BnB</h1>
-<button type="button" name="button">Signup</button>
-<button type="button" name="button">Login</button>
+<form action='/sessions/new' method='get'>
+  <label for='sign in'>
+    <input type='submit' name='sign in' value='sign in'>
+  </label>
+</form>
+
+<form action='/users/new' method='get'>
+  <label for='sign up'>
+    <input type='submit' name='sign up' value='sign up'>
+  </label>
+</form>
+
+<form action='/spaces/new' method='get'>
+  <label for='add space'>
+    <input type='submit' name='add space' value='Add space'>
+  </label>
+</form>
 
 
-    <button type="button" name="button">List my space</button>
 <button type="button" name="button">Make a booking</button>
-<ul>
-  <li>Room in a holiday cottage in Spain</li>
-  <li>Apartment in New York</li>
-  <li>Room in a house in Transylvania</li>
+
+<ul id='list_spaces'>
+  <% @spaces.each do |space| %>
+      <li>
+        <%= space.space_name %>
+        <br>
+        <%= space.description %>
+        <br>
+        <%= space.price %>
+        <br>
+        <%= space.user.name %>
+     </li>
+  <% end %>
 </ul>
