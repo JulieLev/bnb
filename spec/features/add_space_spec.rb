@@ -2,7 +2,7 @@
 feature 'Adding Spaces' do
 
   scenario 'a user can add a space' do
-    signup()  
+    signup()
     visit '/spaces/new'
     expect(page.status_code).to eq 200
     fill_in :space_name, with: 'Spanish Villa'
@@ -19,4 +19,16 @@ feature 'Adding Spaces' do
       expect(page).to have_content('Steve')
     end
   end
+
+  scenario 'an unregistered or signed out user cannot add a space' do
+    visit '/spaces/new'
+    expect(current_path).to eq '/'
+  end
+
+  scenario 'an signed in user can add a space' do
+    signup()
+    visit '/spaces/new'
+    expect(current_path).to eq '/spaces/new'
+  end
+
 end

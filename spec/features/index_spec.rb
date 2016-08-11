@@ -2,7 +2,7 @@ feature 'index page' do
   before(:each) do
     visit '/'
   end
-  
+
   scenario 'I can navigate to sign up page from the index page' do
     click_button('sign up')
     expect(current_path).to eq('/users/new')
@@ -13,9 +13,9 @@ feature 'index page' do
     expect(current_path).to eq('/sessions/new')
   end
 
-  scenario 'I can navigate to add_space page from the index page' do
+  scenario 'I cannot navigate to add_space page from the index page if not signed in' do
     click_button('Add space')
-    expect(current_path).to eq('/spaces/new')
+    expect(current_path).to eq('/')
   end
 
 end

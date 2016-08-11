@@ -76,7 +76,12 @@ class Bnb < Sinatra::Base
   end
 
   get '/spaces/new' do
-    erb :'spaces/new'
+    if current_user
+      erb :'spaces/new'
+    else
+      # flash.keep[:notice] = 'You are not signed in.'
+      redirect to '/'
+    end
   end
 
   post '/spaces/add' do
