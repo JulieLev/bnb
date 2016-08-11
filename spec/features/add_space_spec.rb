@@ -1,6 +1,8 @@
+
 feature 'Adding Spaces' do
 
   scenario 'a user can add a space' do
+    signup()  
     visit '/spaces/new'
     expect(page.status_code).to eq 200
     fill_in :space_name, with: 'Spanish Villa'
@@ -14,7 +16,7 @@ feature 'Adding Spaces' do
       expect(page).to have_content('Spanish Villa')
       expect(page).to have_content('Beautiful sea view')
       expect(page).to have_content('10')
-      expect(page).to have_content('Albie')
+      expect(page).to have_content('Steve')
     end
   end
 end
