@@ -24,6 +24,7 @@ class Bnb < Sinatra::Base
   end
 
   get '/' do
+    @spaces = Space.all
     erb :index
   end
 
