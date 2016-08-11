@@ -24,4 +24,11 @@ feature 'Adding Spaces' do
     visit '/spaces/new'
     expect(current_path).to eq '/'
   end
+
+  scenario 'an signed in user can add a space' do
+    signup()
+    visit '/spaces/new'
+    expect(current_path).to eq '/spaces/new'
+  end
+
 end
