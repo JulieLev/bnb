@@ -8,6 +8,8 @@ feature 'Adding Spaces' do
     fill_in :space_name, with: 'Spanish Villa'
     fill_in :description, with: 'Beautiful sea view'
     fill_in :price, with: 10
+    fill_in :date_from, with: "1988-12-23"
+    fill_in :date_to, with: "1998-12-25"
     click_button 'Add Space'
     expect(page.status_code).to eq 200
     expect(current_path).to eq '/spaces/index'
@@ -16,6 +18,9 @@ feature 'Adding Spaces' do
       expect(page).to have_content('Spanish Villa')
       expect(page).to have_content('Beautiful sea view')
       expect(page).to have_content('10')
+      expect(page).to have_content('1988-12-23')
+
+      expect(page).to have_content('1998-12-25')
       expect(page).to have_content('Steve')
     end
   end
